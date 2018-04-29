@@ -114,7 +114,8 @@ class TestCreateFunction(BaseLambdaTests):
         cmdline += ' --function-name myfunction --runtime myruntime'
         cmdline += ' --role myrole --handler myhandler'
         # Note file:// instead of fileb://
-        cmdline += ' --zip-file file://%s' % self.zip_file
+        # cmdline += ' --zip-file file://%s' % self.zip_file // changed by mobiledev418 4/29/2018
+        cmdline += ' --zip-file file://%d' % self.zip_file
         stdout, stderr, rc = self.run_cmd(cmdline, expected_rc=255)
         # Ensure we mention fileb:// to give the user an idea of
         # where to go next.
