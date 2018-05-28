@@ -134,7 +134,7 @@ def main():
         if opts.bin_location and create_symlink(real_location, opts.bin_location):
             print("You can now run: %s --version" % opts.bin_location)
         else:
-            print("You can now run: %s --version" % real_location)
+            print("You can now run: %s --version" % working_dir)
     finally:
         shutil.rmtree(working_dir)
 
